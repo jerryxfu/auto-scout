@@ -1,7 +1,13 @@
 # auto-scout
 
 ```bash
-pip install requests
+pip install requests pandas openpyxl jinja2
+```
+
+Create a file called `constants.py` and add the following:
+
+```python
+TBA_API_KEY = "YOUR_API_KEY"
 ```
 
 FRC auto scouting app
@@ -32,12 +38,12 @@ Compare data with scouts data to find out how accurate the scouts are
         - robot 1,2,3 leave <<<
         - ALLIANCE total mobility points
         - ALLIANCE total points
-        - REEF ALLIANCE count L2/3/4 A,B,C,D,E,F,G,H,I,J,K,L (accuracy?)
+        - REEF ALLIANCE count L1/2/3/4 A,B,C,D,E,F,G,H,I,J,K,L
 
     - TELEOP
         - CORAL placed
         - CORAL points
-        - REEF ALLIANCE count L2/3/4 A,B,C,D,E,F,G,H,I,J,K,L (accuracy?)
+        - REEF ALLIANCE count L1/2/3/4 A,B,C,D,E,F,G,H,I,J,K,L
         - total points
 
     - ALLIANCE

@@ -7,6 +7,7 @@ def cc(color, text):
         "RED": "\033[91m",
         "FUCHSIA": "\033[95m",
         "GRAY": "\033[90m",
+        "WHITE": "\033[97m",
         "ENDC": "\033[0m",
     }
 
