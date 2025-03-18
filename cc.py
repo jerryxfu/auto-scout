@@ -1,4 +1,4 @@
-def cc(color, text):
+def cc(color, text: str):
     colors = {
         "BLUE": "\033[94m",
         "CYAN": "\033[96m",
