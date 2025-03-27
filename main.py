@@ -31,21 +31,21 @@ category = input(
 
 def natural_key(s):
     # Convert each numeric part to an integer, leave other parts as lower-case strings
-    return [int(text) if text.isdigit() else text.lower() for text in re.split('([0-9]+)', s)]
+    return [int(text) if text.isdigit() else text.lower() for text in re.split("([0-9]+)", s)]
 
 
-def get_event_list(_team, _year):
-    _requestEndpoint = "team/frc" + _team + "/events/" + str(_year) + "/simple"
+def get_event_list(_team: int, _year: int):
+    _requestEndpoint = "team/frc" + str(_team) + "/events/" + str(_year) + "/simple"
 
-    print(cc("GRAY", "Getting team " + _team + " event list at: " + _requestEndpoint))
+    print(cc("GRAY", "Getting team " + str(_team) + " event list at: " + _requestEndpoint))
     _res = requests.get(API_ENDPOINT + _requestEndpoint + "?X-TBA-Auth-Key=" + TBA_API_KEY).json()
     return sorted(_res, key=lambda x: x["start_date"])  # sorts by start date
 
 
-def get_match_keys(_team, _event):
-    _requestEndpoint = "team/frc" + _team + "/event/" + str(CURRENT_YEAR) + str(_event) + "/matches/keys"
+def get_match_keys(_team: int, _event: str):
+    _requestEndpoint = "team/frc" + str(_team) + "/event/" + str(CURRENT_YEAR) + str(_event) + "/matches/keys"
 
-    print(cc("GRAY", "Getting team " + _team + " match list at: " + _requestEndpoint))
+    print(cc("GRAY", "Getting team " + str(_team) + " match list at: " + _requestEndpoint))
     _res = requests.get(API_ENDPOINT + _requestEndpoint + "?X-TBA-Auth-Key=" + TBA_API_KEY).json()
 
     # Extract and sort match keys
